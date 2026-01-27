@@ -184,7 +184,7 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
           <div class="code-line comment" id="oneliner-comment"># Works everywhere. Installs everything. You're welcome. 🦞</div>
           <div class="code-line cmd">
             <span class="code-prompt">$</span>
-            <span class="os-cmd">curl -fsSL https://molt.bot/install.sh | bash</span>
+            <span class="os-cmd">curl -fsSL https://clawd.bot/install.sh | bash</span>
             <button class="copy-line-btn" data-cmd="oneliner" title="Copy">
               <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polyline points="20 6 9 17 4 12"/></svg>
@@ -281,12 +281,12 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
         pnpm: 'pnpm add -g nagabot'
       };
 
-      const windowsPsCmd = 'iwr -useb https://molt.bot/install.ps1 | iex';
-      const windowsPsBetaCmd = '& ([scriptblock]::Create((iwr -useb https://molt.bot/install.ps1))) -Tag beta';
-      const windowsCmdCmd = 'curl -fsSL https://molt.bot/install.cmd -o install.cmd && install.cmd && del install.cmd';
-      const windowsCmdBetaCmd = 'curl -fsSL https://molt.bot/install.cmd -o install.cmd && install.cmd --tag beta && del install.cmd';
+      const windowsPsCmd = 'iwr -useb https://clawd.bot/install.ps1 | iex';
+      const windowsPsBetaCmd = '& ([scriptblock]::Create((iwr -useb https://clawd.bot/install.ps1))) -Tag beta';
+      const windowsCmdCmd = 'curl -fsSL https://clawd.bot/install.cmd -o install.cmd && install.cmd && del install.cmd';
+      const windowsCmdBetaCmd = 'curl -fsSL https://clawd.bot/install.cmd -o install.cmd && install.cmd --tag beta && del install.cmd';
       const osCmds = {
-        unix: "curl -fsSL https://molt.bot/install.sh | bash",
+        unix: "curl -fsSL https://clawd.bot/install.sh | bash",
         windows: windowsPsCmd
       };
 
@@ -360,8 +360,8 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
         let onelinerCmd;
         if (currentOs === 'unix') {
           onelinerCmd = currentBeta
-            ? "curl -fsSL https://molt.bot/install.sh | bash -s -- --beta"
-            : "curl -fsSL https://molt.bot/install.sh | bash";
+            ? "curl -fsSL https://clawd.bot/install.sh | bash -s -- --beta"
+            : "curl -fsSL https://clawd.bot/install.sh | bash";
         } else if (currentWinShell === 'cmd') {
           onelinerCmd = currentBeta ? windowsCmdBetaCmd : windowsCmdCmd;
         } else {
@@ -369,7 +369,7 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
         }
         document.querySelectorAll('.os-cmd').forEach(cmd => cmd.textContent = onelinerCmd);
         // Update hackable OS command for installer mode
-        const hackableOsCmd = "curl -fsSL https://molt.bot/install.sh | bash -s -- --install-method git";
+        const hackableOsCmd = "curl -fsSL https://clawd.bot/install.sh | bash -s -- --install-method git";
         document.querySelectorAll('.os-cmd-hackable').forEach(cmd => cmd.textContent = hackableOsCmd);
         // Update OS indicator text
         osDetected.textContent = osLabels[currentOs];
@@ -484,8 +484,8 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
         'oneliner': () => {
           if (currentOs === 'unix') {
             return currentBeta
-              ? "curl -fsSL https://molt.bot/install.sh | bash -s -- --beta"
-              : "curl -fsSL https://molt.bot/install.sh | bash";
+              ? "curl -fsSL https://clawd.bot/install.sh | bash -s -- --beta"
+              : "curl -fsSL https://clawd.bot/install.sh | bash";
           } else if (currentWinShell === 'cmd') {
             return currentBeta ? windowsCmdBetaCmd : windowsCmdCmd;
           } else {
@@ -497,7 +497,7 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
           return currentPm === 'npm' ? `npm i -g nagabot${betaSuffix}` : `pnpm add -g nagabot${betaSuffix}`;
         },
         'onboard': () => 'nagabot onboard',
-        'hackable-installer': () => "curl -fsSL https://molt.bot/install.sh | bash -s -- --install-method git",
+        'hackable-installer': () => "curl -fsSL https://clawd.bot/install.sh | bash -s -- --install-method git",
         'clone': () => 'git clone https://github.com/moltbot/moltbot.git',
         'build': () => 'cd moltbot && pnpm install && pnpm run build',
         'hackable-onboard': () => 'pnpm run nagabot onboard',

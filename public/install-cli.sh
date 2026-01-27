@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Nagabot CLI installer (non-interactive, no onboarding)
-# Usage: curl -fsSL --proto '=https' --tlsv1.2 https://naga.bot/install-cli.sh | bash -s -- [--json] [--prefix <path>] [--version <ver>] [--node-version <ver>] [--onboard]
+# Usage: curl -fsSL --proto '=https' --tlsv1.2 https://clawd.bot/install-cli.sh | bash -s -- [--json] [--prefix <path>] [--version <ver>] [--node-version <ver>] [--onboard]
 
 PREFIX="${NAGABOT_PREFIX:-${HOME}/.nagabot}"
 NAGABOT_VERSION="${NAGABOT_VERSION:-latest}"

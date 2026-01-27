@@ -38,9 +38,9 @@ Automatically deployed to GitHub Pages on push to `main`.
 
 The landing page hosts installer scripts:
 
-- **macOS/Linux**: `curl -fsSL --proto '=https' --tlsv1.2 https://naga.bot/install.sh | bash`
-- **macOS/Linux (CLI only, no onboarding)**: `curl -fsSL --proto '=https' --tlsv1.2 https://naga.bot/install-cli.sh | bash`
-- **Windows**: `iwr -useb https://naga.bot/install.ps1 | iex`
+- **macOS/Linux**: `curl -fsSL --proto '=https' --tlsv1.2 https://clawd.bot/install.sh | bash`
+- **macOS/Linux (CLI only, no onboarding)**: `curl -fsSL --proto '=https' --tlsv1.2 https://clawd.bot/install-cli.sh | bash`
+- **Windows**: `iwr -useb https://clawd.bot/install.ps1 | iex`
 
 These scripts:
 1. Install Homebrew (macOS) or detect package managers (Windows)
