@@ -1,0 +1,22 @@
+name: Install Git Smoke
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *" # daily
+
+jobs:
+  install-git-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout installer
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v4
+
+      - name: Build git smoke image
+        run: docker build -t nagabot-install-git-smoke:ci -f scripts/docker/install-sh-git-smoke/Dockerfile .
+
+      - name: Run git smoke
+        env:
+          NAGABOT_NO_ONBOARD: "1"
+          NAGABOT_NO_PROMPT: "1"
+        run: docker run --rm -t -e NAGABOT_NO_ONBOARD -e NAGABOT_NO_PROMPT nagabot-install-git-smoke:ci
